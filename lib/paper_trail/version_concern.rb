@@ -59,9 +59,7 @@ module PaperTrail
       # Defaults to using the primary key as the secondary sort order if
       # possible.
       def timestamp_sort_order(direction = "asc")
-        [arel_table[:created_at].send(direction.downcase)].tap do |array|
-          array << arel_table[primary_key].send(direction.downcase) if primary_key_is_int?
-        end
+        [arel_table[primary_key].send(direction.downcase)]
       end
 
       # Given an attribute like `"name"`, query the `versions.object_changes`
