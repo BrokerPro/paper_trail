@@ -38,7 +38,8 @@ module PaperTrail
     #   integer (the rails convention) but not always.
     # @api private
     def primary_key
-      table[@version_class.primary_key]
+#      table[@version_class.primary_key]
+      @version_class.primary_key
     end
 
     # @return - Arel::Table - The version table, usually named `versions`, but
