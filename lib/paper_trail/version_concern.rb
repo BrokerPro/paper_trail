@@ -225,7 +225,7 @@ module PaperTrail
       def preceding_by_timestamp(obj)
         obj = obj.send(:created_at) if obj.is_a?(self)
         where(arel_table[:created_at].lt(obj)).
-          order(timestamp_sort_order("desc"))
+          order(id: :desc)
       end
 
       # @api private
