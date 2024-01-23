@@ -11,6 +11,35 @@ recommendations of [keepachangelog.com](http://keepachangelog.com/).
 
 ### Added
 
+- None
+
+### Fixed
+
+- None
+
+## 15.1.0 (2023-10-22)
+
+### Breaking Changes
+
+- None
+
+### Fixed
+
+- None
+
+### Dependencies
+
+- Add support for Rails 7.1
+- Add support for Ruby 3.2
+
+## 15.0.0 (2023-08-06)
+
+### Breaking Changes
+
+- None
+
+### Added
+
 - [#1416](https://github.com/paper-trail-gem/paper_trail/pull/1416) - Adds a
   model-configurable option `synchronize_version_creation_timestamp` which, if
   set to false, opts out of synchronizing timestamps between `Version.created_at`
@@ -18,7 +47,18 @@ recommendations of [keepachangelog.com](http://keepachangelog.com/).
 
 ### Fixed
 
-- None
+- [#1422](https://github.com/paper-trail-gem/paper_trail/pull/1422) - Fix the
+  issue that unencrypted plaintext values are versioned with ActiveRecord
+  encryption (since Rails 7) when using JSON serialization on PostgreSQL json
+  columns.
+- [#1414](https://github.com/paper-trail-gem/paper_trail/pull/1414) - When
+  generating the migration, the version table will use uuid as primary key type
+  if `--uuid` flag is specified.
+
+### Dependencies
+
+- Drop support for Rails 6.0, which [reached EoL on 2023-06-01][2]
+- Drop support for Ruby 2.7, which [reached EoL on 2023-03-31][3]
 
 ## 14.0.0 (2022-11-26)
 
@@ -230,8 +270,7 @@ recommendations of [keepachangelog.com](http://keepachangelog.com/).
 
 ### Dependencies
 
-- Drop support for rails <= 5.1 (reached EOL when 6.0 was released,
-  per https://guides.rubyonrails.org/maintenance_policy.html)
+- Drop support for rails <= 5.1, which [reached EOL when 6.0 was released][2]
 - Drop support for ruby 2.3 (reached EOL on 2019-04-01)
 
 ## 10.3.1 (2019-07-31)
@@ -1415,3 +1454,5 @@ in the `PaperTrail::Version` class through a `Rails::Engine` when the gem is use
     for names that are not obviously pertaining to PaperTrail to prevent method name collision.
 
 [1]: https://github.com/paper-trail-gem/paper_trail#4c-storing-metadata
+[2]: https://guides.rubyonrails.org/maintenance_policy.html
+[3]: https://www.ruby-lang.org/en/downloads/branches/

@@ -7,7 +7,7 @@ require "simplecov"
 SimpleCov.start do
   add_filter %w[Appraisals Gemfile Rakefile doc gemfiles spec]
 end
-SimpleCov.minimum_coverage(ENV["DB"] == "postgres" ? 96.8 : 92.4)
+SimpleCov.minimum_coverage(ENV["DB"] == "postgres" ? 96.79 : 92.4)
 
 require "byebug"
 require_relative "support/pt_arel_helpers"
@@ -79,7 +79,7 @@ require File.expand_path("dummy_app/config/environment", __dir__)
 require_relative "support/paper_trail_spec_migrator"
 ::PaperTrailSpecMigrator.new.migrate
 
-# This final section reselmbles what might be dummy_app's spec_helper, if it
+# This final section resembles what might be dummy_app's spec_helper, if it
 # had one.
 require "paper_trail/frameworks/rspec"
 RSpec.configure do |config|

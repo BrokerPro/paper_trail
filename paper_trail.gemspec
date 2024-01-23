@@ -43,7 +43,7 @@ has been destroyed.
   # about 3 years, per https://www.ruby-lang.org/en/downloads/branches/
   #
   # See "Lowest supported ruby version" in CONTRIBUTING.md
-  s.required_ruby_version = ">= 2.7.0"
+  s.required_ruby_version = ">= 3.0.0"
 
   # We no longer specify a maximum activerecord version.
   # See discussion in paper_trail/compatibility.rb
@@ -64,7 +64,7 @@ has been destroyed.
   s.add_development_dependency "rails", ::PaperTrail::Compatibility::ACTIVERECORD_GTE
 
   s.add_development_dependency "rake", "~> 13.0"
-  s.add_development_dependency "rspec-rails", "~> 5.0.2"
+  s.add_development_dependency "rspec-rails", "~> 6.0.3"
   s.add_development_dependency "rubocop", "~> 1.22.2"
   s.add_development_dependency "rubocop-packaging", "~> 0.5.1"
   s.add_development_dependency "rubocop-performance", "~> 1.11.5"
